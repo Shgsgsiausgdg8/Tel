@@ -617,12 +617,14 @@ async def periodic_tasks():
         await asyncio.sleep(24 * 3600)
 
 # راه‌اندازی ربات
+
 async def main():
     init_db()
     while True:
         try:
             await client.start()
             logger.info("ربات شروع شد!")
+            # وظایف پس‌زمینه مانند task های دوره‌ای و نوتیفیکیشن‌ها
             asyncio.create_task(periodic_tasks())
             asyncio.create_task(notify_frequent_questions())
             await client.run_until_disconnected()
