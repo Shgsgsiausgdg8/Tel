@@ -4,7 +4,6 @@ import logging
 import os
 from datetime import datetime, timedelta
 from telethon import TelegramClient, events, Button
-from telethon.tl.types import InputFile
 from fuzzywuzzy import fuzz
 import shutil
 
@@ -399,9 +398,5 @@ async def main():
     init_db()
     await client.start(bot_token=ADMIN_BOT_TOKEN)
     logger.info("ربات ادمین شروع شد!")
-    asyncio.create_task(backup_database())
+    asyncio.create_task(backup_database())  # هر وظیفه‌ای که باید انجام بشه
     await client.run_until_disconnected()
-
-if __name__ == '__main__':
-    client.state = None
-    asyncio.run(main())

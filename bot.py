@@ -1,13 +1,13 @@
 import asyncio
-import bot
+import main
 import admin_bot
 
 async def main():
-    # هر دو فایل را به صورت همزمان اجرا می‌کنیم
+    # اجرای همزمان هر دو فایل
     await asyncio.gather(
-        bot.main(),         # اجرا کردن main از bot.py
-        admin_bot.main()    # اجرا کردن main از admin_bot.py
+        main.main(),         # اجرای main از main.py
+        admin_bot.main()     # اجرای main از admin_bot.py
     )
 
-# در اینجا از asyncio.run استفاده می‌کنیم تا همزمان اجرا بشن
+# اجرای همزمان با asyncio.run
 asyncio.run(main())

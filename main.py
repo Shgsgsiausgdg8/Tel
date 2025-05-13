@@ -617,7 +617,6 @@ async def periodic_tasks():
         await asyncio.sleep(24 * 3600)
 
 # راه‌اندازی ربات
-
 async def main():
     init_db()
     while True:
