@@ -3,3 +3,4 @@ fuzzywuzzy
 aiohttp
 markdown
 python-Levenshtein
+tenacity
